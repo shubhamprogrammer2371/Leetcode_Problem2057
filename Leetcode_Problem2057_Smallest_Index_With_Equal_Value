@@ -1,0 +1,17 @@
+int smallestEqual(int* nums, int numsSize){
+    int num = INT_MAX;
+    for( int i = 0 ; i < numsSize ; i++)
+        num = (((i%10) == nums[i]) && (i < num)) ? i : num;
+    return (num == INT_MAX) ? -1 : num;
+}
+
+
+-----------------------------------------------------------------------------------------
+
+
+int smallestEqual(int* nums, int numsSize){
+    for( int i = 0 ; i < numsSize ; i++)
+        if((i % 10) == nums[i]) 
+            return i;
+    return -1;
+}
